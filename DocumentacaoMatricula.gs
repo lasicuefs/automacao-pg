@@ -1,3 +1,4 @@
+//Esse Script requer a biblioteca PDF-lib (https://pdf-lib.js.org/)
 //Constantes globais
 //Pasta onde ficará salvo os PDFs
 const PDF_REGULAR = DriveApp.getFolderById("");
