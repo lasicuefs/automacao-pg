@@ -2,8 +2,8 @@
 <html>
 <h1 align="center" style="margin-right: -1.07cm; margin-bottom: 0cm">Automação de processos da pós-graduação em ciência da computação da Universidade Estadual de Feira de Santana</h1>
 <p>
-Esse documento descreve o comportamento dos scripts de automação, como também os formulários e planilhas necessárias para uso com os scripts. Exemplos visuais podem ser encontrados 
-<a href="https://drive.google.com/drive/folders/1yZ6jJ9qG1GTLDjNK1zB1pefCNJmY2lFS?usp=sharing">clicando aqui.</a>
+Esse documento descreve o comportamento dos scripts de automação, como também os formulários e planilhas necessárias para uso com os scripts. Caso queira replicar os sistemas, exemplos de como devem ser feitos os formulários e planilhas podem ser encontrados  
+<a href="https://drive.google.com/drive/folders/1yZ6jJ9qG1GTLDjNK1zB1pefCNJmY2lFS?usp=sharing">clicando aqui.</a> Para maiores detalhes, atentar-se aos comentários dentro dos scripts.
 
 </p>
 <ol>
