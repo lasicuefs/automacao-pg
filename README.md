@@ -6,6 +6,36 @@ Esse documento descreve o comportamento dos scripts de automação, como também
 <a href="https://drive.google.com/drive/folders/1yZ6jJ9qG1GTLDjNK1zB1pefCNJmY2lFS?usp=sharing">clicando aqui.</a> Para maiores detalhes, atentar-se aos comentários dentro dos scripts.
 
 </p>
+
+<p>
+Caso deseje fazer a implantação desse sistema, siga as seguintes etapas:
+<ul>
+<li>Crie as planilhas e formulários necessários a partir dos exemplos contidos <a href="https://drive.google.com/drive/folders/1yZ6jJ9qG1GTLDjNK1zB1pefCNJmY2lFS?usp=sharing">na pasta compartilhada.</a> </li>
+<li>Em seguida, terá que vincular os scripts. Para fazer isso, do formulário, clique nos três pontos no canto direito e clicque em editor de script. Da planilha, clique em extensões e depois em apps script.</li>
+<li>Então copie os scripts para os editores, seguindo a seguinte ordem de vinculação:</li>
+<ul>
+<li>Script ConfirmacaoDeMatricula.gs para o formulário de comfirmação de matrícula</li>
+<li>Script IntencaoDeMatricula.gs e EmailTemplateIntencaoDeMatricula.html para o formulário de intenção de matrícula</li>
+<li>Script PlanilhaDeOferta.gs para a planilha de oferta didática</li>
+<li>Script DocumentacaoMatricula.gs e TemplateEmailDocumentacaoMatricula.html para o formulário de documentação de candidatos aprovados</li>
+<li>Script FormAlunoEspecial.gs e TemplateEmailFormAlunoEspecial.html para o formulário de inscrição de candidatos a aluno especial</li>
+<li>Script FormAlunoRegular.gs e TemplateEmailFormAlunoRegular.html para o formulário de inscrição de candidatos a aluno regular</li>
+</ul>
+<li>Em seguida, crie os acionadores que chamaram a execução dos scripts:</li>
+<ul>
+<li>Na planilha de oferta didática, clique com o direito no botão atualizar, irá aparecer três pontos no botão. Clique nos três pontos e selecione a opção "transferir script" e então digite o nome da função a ser chamada pelo botão. Nesse caso é a função update (sem parênteses)</li>
+<li>Para os outros casos, é necessário colocar acionadores automáticos. A partir do editor de script, clique em acionadores do lado esquerdo, depois em adicionar acionador.</li>
+<ul>
+<li>No formulário de intenção de matrícula, escolha a função "enviarEmail", origem do evento "do formulário" e o tipo do evento, "ao enviar o formulário"</li>
+<li>No formulário de confirmação de matrícula, escolha a função "confirmar", origem do evento "do formulário" e o tipo do evento, "ao enviar o formulário"</li>
+<li>Nos formulários de inscrição de candidatos a aluno regular e especial, escolha a função "moverArquivo", origem do evento "do formulário" e o tipo do evento, "ao enviar o formulário"</li>
+<li>No formulário de documentação de candidatos aprovados, escolha a função "onFormSubmit", origem do evento "do formulário" e o tipo do evento, "ao enviar o formulário"</li>
+</ul>
+</ul>
+<li>Observação: O script do formulário de documentação de candidatos aprovados usa a biblioteca PDF-lib. Essa biblioteca possui uma linha de código que faz uma chamada à uma função que não existe no GAS. Um jeito de contornar isso é copiando a biblioteca em sua totalidade para um arquivo de script no seu editor (por exemplo pdf-lib.gs) e alterar o método chamado para um alternativo no GAS. Você encontra o que fazer em detalhes na discussão do github, <a href="https://github.com/Hopding/pdf-lib/discussions/1241">clicando aqui</a></li>
+</ul>
+</p>
+<p>Para entender melhor como os sistemas funcionam, continue a leitura abaixo.</p>
 <ol>
 	<li><h2 align="justify" style="margin-right: -1.07cm; margin-bottom: 0cm"><a name="_lwmcz3zg1enl"></a>
 	Processo de inscrição de aluno regular e especial</h2>
